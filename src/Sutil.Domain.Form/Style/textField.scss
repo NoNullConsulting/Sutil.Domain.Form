@@ -1,0 +1,63 @@
+
+form-content {
+  input {
+    font-size: $font-size-n;
+    line-height: $font-size-n;
+    vertical-align: middle;
+    padding: 0px 7px;
+    height: $input-height;
+    width: calc(100% - 14px);
+    min-width: 200px;
+    margin-bottom: 18px;
+
+    border-radius: 5px;
+    border: 1px solid #d2d2d2;
+    color: #4b4b4b;
+
+    &:focus {
+      outline: none;
+      border-color: #c0c0ff;
+    }
+  }
+
+  text-field-container {
+    display: block;
+    position: relative;
+    input + loader.loading {
+      position: absolute;
+      top: 12px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background: linear-gradient(133deg, #cf0078 0%, #00d4ff 100%);
+      animation: rotation 1s infinite linear;
+
+      &::before{
+        content: "";
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        border-radius: 100%;
+        background-color: white;
+      }
+    }
+  }
+  
+  &.error > text-field-container > input {
+    border-color: #ffc1c1;
+    margin-bottom: 4px;
+  }
+  &.ok > text-field-container > input {border-color: #338233;}
+
+  error {
+    padding-left: 5px;
+    font-size: $font-size-s;
+    color: grey;
+    display: block;
+    width: min-content;
+    min-width: 100%;
+  }
+}

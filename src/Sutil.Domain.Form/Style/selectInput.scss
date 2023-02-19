@@ -1,0 +1,143 @@
+$check-mark-size: 24px;
+
+.checkbox {
+  height: $check-mark-size;
+  width: $check-mark-size;
+
+  position: relative;
+
+  border: 2px #a6a6a6 solid;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    background: $cta-background;
+    display: block;
+    opacity: 0;
+    transition: 200ms ease all;
+  }
+
+  &.checked::after,
+  &.checked::before {
+    opacity: 1;
+  }
+
+  &::after {
+    width: $check-mark-size - (2 * 2px);
+    height: $check-mark-size - (2 * 2px);
+
+    border-radius: 5px;
+    border: 2px solid white;
+  }
+
+  &::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    top: -2px;
+    left: -2px;
+    border-radius: 8px;
+  }
+}
+
+.radio-button {
+  width: $check-mark-size;
+  height: $check-mark-size;
+  
+  position: relative;
+  
+  border: 2px solid #a6a6a6;
+  border-radius: 50%;
+
+
+  &::before, &::after {
+    content: '';
+    
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    
+    border-radius: 50%;
+    background: $cta-background;
+    opacity: 0;
+    transition: 1s ease all;
+  }
+
+  &::before{
+    width: $check-mark-size;;
+    height: $check-mark-size;;
+
+    top: -2px;
+    left: -2px;
+  }
+
+  &::after {
+    width: $check-mark-size - (2 * 2px);
+    height: $check-mark-size - (2 * 2px);
+
+    border: 2px solid white;
+  }
+
+  &.selected::after,
+  &.selected::before {
+    opacity: 1;
+    transform: rotate(720deg);
+  }
+}
+
+.toggle-button {
+  height: $check-mark-size;
+  width: $check-mark-size * 2;
+
+  position: relative;
+
+  background: #f0f0f0;
+  border-radius: 20px;
+  &::before{
+    content: '';
+    
+    height: $check-mark-size - 2px;
+    width: $check-mark-size - 2px;
+    
+    top: 1px;
+    left: 1px;
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    border-radius: 20px;
+    
+    background: $cta-background;
+    transition: 0.5s ease all;
+  }
+
+  &::after {
+    content: '';
+    
+    height: $check-mark-size - 2px;
+    width: $check-mark-size - 2px;
+    
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    top: 1px;
+    left: 1px;
+
+    background: white;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  &.toggled::before{
+    width: $check-mark-size + $check-mark-size - 2px;
+  }
+  &.toggled::after {
+    left: $check-mark-size + 1px;
+    transform: rotate(80deg);
+  }
+
+}

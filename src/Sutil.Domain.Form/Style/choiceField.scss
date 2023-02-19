@@ -1,0 +1,114 @@
+choice-selector {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    min-height: 24px;
+
+  + choice-selector {
+    margin-top: 10px;
+  }
+  
+  checkmark {
+    border: 2px #a6a6a6 solid;
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    
+    &.checked {
+      border: 2px #1f2937 solid;
+    }
+  }
+
+  input[type="checkbox"] { 
+    display: none;
+  }
+
+  checkmark::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(133deg, rgba(207,0,120,1) 0%, rgba(0,212,255,1) 100%);
+    border: 2px solid white;
+    display: block;
+    border-radius: 5px;
+    opacity: 0;
+    top: 0px;
+    transition: 200ms ease all;
+  }
+
+  checkmark::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(133deg, rgba(207,0,120,1) 0%, rgba(0,212,255,1) 100%);
+    display: block;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 200ms ease all;
+    margin: -2px;
+    border-radius: 8px;
+  }
+  
+  checkmark.checked::after {opacity: 1;}
+  checkmark.checked::before {opacity: 1;}
+
+
+
+  > input[type=radio] {display: none;}
+
+  > radio-checkmark {
+    z-index: 3;
+    border: none;
+    position: relative;
+    margin-right: 10px;
+    background: white;
+    border: 2px solid #a6a6a6;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+
+    &::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      z-index: 1;
+      top: -2px;
+      left: -2px;
+      border-radius: 50%;
+      position: absolute;
+      background: linear-gradient(133deg, rgba(207,0,120,1) 0%, rgba(0,212,255,1) 100%);
+      opacity: 0;
+    }
+
+    &::after {
+      transition: 1s ease all;
+      content: '';
+      z-index: 1;
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      position: absolute;
+      border: 2px solid white;
+      background: rgb(207,0,120);
+      background: $cta-background;
+      opacity: 0;
+    }
+
+    &.checked::after, &.checked::before{
+      opacity: 1;
+      transform: rotate(720deg);
+    }
+  }
+}
+
+.choice-input {
+  padding-bottom: 15px;
+}
