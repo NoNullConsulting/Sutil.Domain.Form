@@ -1,0 +1,108 @@
+$font-size-l: 24px; 
+$font-size-n: 16px;
+$font-size-s: 12px;
+
+$form-elements-gap: 15px;
+
+$input-height: 40px;
+
+$cta-background: linear-gradient(133deg, rgba(207,0,120,1) 0%, rgba(0,212,255,1) 100%);
+$cta-background-text: white;
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+*{
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding-bottom: 400px;
+}
+
+form {
+  min-width: 300px;
+  padding-bottom: $form-elements-gap;
+  
+  
+  &-element.choice-input {
+    choice-selector {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  dynamic-choice{
+    > p {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+    
+  &-element.select-input {
+      
+    ul {
+      margin: 0px;
+      list-style: none;
+      padding: 0px;
+      background: #fefefe;
+      z-index: 10;
+      li {
+        font-size: 16px;
+        text-align: left;
+        padding: 5px 10px 5px;
+        border-radius: 5px;
+        
+        &.selected {
+          background: #cecece;
+        }
+      }
+    }
+  }
+
+  .choice-form {
+    &--active {
+      display: block; 
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+}
+
+form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $form-elements-gap;
+  
+  &.row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    > form-element {
+      flex-grow: 1;
+    }
+  }
+  
+  > form-element {
+    margin-bottom: -$form-elements-gap;
+  }
+  :last-child {
+    margin-bottom: 0px;
+  }
+}
+
+@import "Style/formElement";
+@import "Style/textField";
+@import "Style/choiceField";
+@import "Style/action";
+@import "Style/selectInput";

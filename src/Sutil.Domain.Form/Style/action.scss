@@ -1,0 +1,44 @@
+button {
+  position: relative;
+  border-radius: 0px;
+  border: none;
+  min-height: 30px;
+  color: black;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  cursor: pointer;
+  align-self: center;
+  font-weight: bold;
+  background: #FFFFFF;
+  transition: 0.2s ease;
+  
+  &.btn-right { float: right }
+  &.btn-left { float: left }
+  
+  &:hover {
+    background: #FFFFFF00 ;
+    color: white;
+  }
+  
+  &::before{
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(133deg, rgba(207,0,120,1) 0%, rgba(0,212,255,1) 100%);
+    top: -2px;
+    left: -2px;
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+  }
+  
+  
+  &.success {
+
+  }
+}
+
+actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
