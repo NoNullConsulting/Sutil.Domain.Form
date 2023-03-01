@@ -1,12 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <Description>Form package for sutil</Description>
+    <RepositoryUrl>https://github.com/NoNullConsulting/Sutil.Domain.Form</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/NoNullConsulting/Sutil.Domain.Form/blob/main/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageTags>fsharp;fable</PackageTags>
+    <Authors>Allan Kjær Nielsen</Authors>
+    <TargetFramework>net7.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RepositoryType>git</RepositoryType>
+    <UsesMarkdownComments>false</UsesMarkdownComments>
+    <DefineConstants>$(DefineConstants);FABLE_COMPILER;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Util.fs" />
+    <Compile Include="Util.fs"  />
     <Compile Include="Form.fs" />
     <Compile Include="ChoiceInput/Choice.fs" />
     <Compile Include="ChoiceInput/ToggleInput.fs" />

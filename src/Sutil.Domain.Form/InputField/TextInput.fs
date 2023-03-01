@@ -7,57 +7,60 @@ type InputType =
     | Text
     | Password
 
-type TextInput<'TResult when 'TResult : equality> = 
-    { Placeholder : string
+type TextInput<'TResult when 'TResult: equality> =
+    { Placeholder: string
       Parser: string -> Validation<'TResult, string>
-      InputType : InputType
-      AutoCompleate : string option
-      ContainerProps : FormElementContainer 
-    }
-    with 
-        member inline model.setPlaceholder(placeholder) =
-            { model with Placeholder = placeholder }
+      InputType: InputType
+      AutoCompleate: string option
+      ContainerProps: FormElementContainer }
 
-        member inline model.isPassword() =
-            { model with InputType = Password }
+    /// <example>
+    /// <code>
+    /// int c = Math.Add(4, 5);
+    /// if (c > 10)
+    /// {
+    ///     Console.WriteLine(c);
+    /// }
+    /// </code>
+    /// </example>
+    member inline model.setPlaceholder(placeholder) =
+        { model with Placeholder = placeholder }
 
-        member inline model.withParser (parser) =
-            { Placeholder = model.Placeholder
-              InputType = model.InputType
-              AutoCompleate = model.AutoCompleate
-              ContainerProps = model.ContainerProps
-              Parser = parser
-            }
+    member inline model.isPassword() = { model with InputType = Password }
 
-        member inline model.render () : FormElement<_> =
-            let primitive = Store.make ""
+    member inline model.withParser(parser) =
+        { Placeholder = model.Placeholder
+          InputType = model.InputType
+          AutoCompleate = model.AutoCompleate
+          ContainerProps = model.ContainerProps
+          Parser = parser }
 
-            let result = primitive ..> model.Parser
+    member inline model.render() : FormElement<_> =
+        let primitive = Store.make ""
 
-            let view = model.ContainerProps.render [
-                Bind.toggleClass(isError' result, "error" )
-                Html.input [
-                    match model.InputType with
-                    | Text -> Attr.typeText
-                    | Password -> Attr.typePassword
-                    Bind.attr("value", Store.set primitive)
-                ]
-                Html.div [
-                    Bind.each(getErrors' result, fun err -> Html.span [Html.text err] )
-                ]
-            ]
+        let result = primitive ..> model.Parser
 
-            result, view
+        let view =
+            model.ContainerProps.render
+                [ Bind.toggleClass (isError' result, "error")
+                  Html.input
+                      [ match model.InputType with
+                        | Text -> Attr.typeText
+                        | Password -> Attr.typePassword
+                        Bind.attr ("value", Store.set primitive) ]
+                  Html.div [ Bind.each (getErrors' result, (fun err -> Html.span [ Html.text err ])) ] ]
 
-        interface IFormElement<TextInput<'TResult>> with
-            member model.UpdateFormContainer( mapper ) =
-                {model with ContainerProps = mapper model.ContainerProps}
+        result, view
 
-module TextInput = 
-    let create() : TextInput<string> =
+    interface IFormElement<TextInput<'TResult>> with
+        member model.UpdateFormContainer(mapper) =
+            { model with
+                ContainerProps = mapper model.ContainerProps }
+
+module TextInput =
+    let create () : TextInput<string> =
         { Placeholder = ""
           Parser = Ok
           InputType = Text
           AutoCompleate = None
-          ContainerProps = FormElementContainer.create()
-        }
+          ContainerProps = FormElementContainer.create () }

@@ -3,3 +3,7 @@
 
 **/obj
 **/bin
+
+**/docs/reference
+**/.fsdocs
+**/tmp
