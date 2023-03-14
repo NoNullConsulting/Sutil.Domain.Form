@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <PackageReference Include="Fake.DotNet.Cli" Version="6.0.0-beta001" />
-    <PackageReference Include="Fake.DotNet.Fsdocs" Version="6.0.0-beta001" />
     <PackageReference Include="Fake.IO.FileSystem" Version="6.0.0-beta001" />
     <PackageReference Include="Fake.Core.Target" Version="6.0.0-beta001" />
     <PackageReference Include="Fake.Core.UserInput" Version="6.0.0-beta001" />
