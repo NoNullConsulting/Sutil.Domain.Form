@@ -4,7 +4,6 @@ open Fake.IO
 open Fake.IO.Globbing.Operators
 open Fake.Core.TargetOperators
 open Utils
-open System
 
 let root = Path.combine __SOURCE_DIRECTORY__ ".."
 let docs = Path.combine root "src/Docs"

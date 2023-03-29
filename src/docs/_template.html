@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{fsdocs-page-title}}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/fav-ico.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="{{fsdocs-authors}}">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <link type="text/css" rel="stylesheet" href="{{root}}content/fsdocs-{{fsdocs-theme}}.css" />
+    <link type="text/css" rel="stylesheet" href="{{root}}content/fsdocs-custom.css" />
+    <script type="text/javascript" src="{{root}}content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+    {{fsdocs-watch-script}}
+</head>
+
+<body class="light">
+    <div class="top-navigation">
+        <a href="{{fsdocs-logo-link}}" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                width="122px" height="85px" viewBox="-0.5 -0.5 122 85"
+                content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2023-03-16T05:40:43.146Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36&quot; version=&quot;20.0.1&quot; etag=&quot;KUyKuTCSCb5dveTXPsHg&quot; type=&quot;google&quot;&gt;&lt;diagram id=&quot;iR0S0pBWqitl1eLO5G-3&quot;&gt;5VZNc6QgEP01XlOKOh/HZJLdvWzVVs0hZyI9SgXFQhyd/PpgAJHoTKzU7mkvFjy6G/q9pjGID2X/U+C6+M0JsACFpA/ixwChXRKr7wBcNJAmkQZyQYmGJsCRvoEBQ4O2lEDjGUrOmaS1D2a8qiCTHoaF4J1vduLM37XGOcyAY4bZHH2mRBYmLbR1+C+geWF3jjZ7vVJia2wyaQpMeDeB4qcgPgjOpR6V/QHYwJ3lRfv9uLI6HkxAJdc4IO1wxqw1uZlzyYtNNhe8rY0ZCAn9EsX4xZqH8yNEY2KqIICXIMVFmZhAaJ9oF1MMaGdCdI7aKDLUFhNarR02auZjaJewGpicl/OPv84fKnI/1IyaVbxS4EMhSxXvMVJDxU1FYAgWqlkjBX8dSyJRiI4GZFZPjh20zM4k+zScJ28xAQxLevbDLzFidvjDqdrYkb33PRreigyM0bRurJ8RbbvxNfsURmKRg5yF+VBjzHGVQMn/KpC9ZmF4k+m1go036J8rlq5tKfHDiTJ24IwLJ53Ta1APi8x0f+Tksx4ETrhl8oas3+xXVwS3/WrennYL+v+N7rRZUfyMqVdvYK4rqIRjjbNhpVPvrn8RcFPrp/BE+4HfT0yPD9EHz68gs2LxzqTLsl3le8prepPXaH+XeiXqgAnV9k9hSnVy41ZdoVpN3SOri9z9qcRP7w==&lt;/diagram&gt;&lt;/mxfile&gt;">
+                <defs />
+                <g>
+                    <path d="M 1 31 L 77 31" fill="none" stroke="currentColor" stroke-width="4" stroke-miterlimit="10"
+                        pointer-events="none" />
+                    <path d="M 101 31 L 118 31" fill="none" stroke="currentColor" stroke-width="4"
+                        stroke-miterlimit="10" pointer-events="none" />
+                    <rect x="21" y="2" width="80" height="80" rx="16" ry="16" fill="none" stroke="currentColor"
+                        stroke-width="4" pointer-events="none" />
+                    <ellipse cx="61" cy="42" rx="20.5" ry="20.5" fill="none" stroke="currentColor" stroke-width="5"
+                        pointer-events="none" />
+                </g>
+            </svg>
+            <span>Docs</span>
+        </a>
+        <a href="{{fsdocs-repository-link}}">
+            Repo
+        </a>
+    </div>
+    <nav>
+        <div id="header">
+            <div class="searchbox" id="fsdocs-searchbox">
+                <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                <span data-search-clear="">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse navbar-nav-scroll" id="navbarsExampleDefault">
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div class="masthead">
+                <h3 class="muted"><a href="{{fsdocs-collection-name-link}}">{{fsdocs-collection-name}}</a></h3>
+            </div>
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                {{fsdocs-list-of-documents}}
+                {{fsdocs-list-of-namespaces}}
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="container" id="fsdocs-content">
+            {{fsdocs-content}}
+            {{fsdocs-tooltips}}
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = '{{root}}';</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="{{root}}content/fsdocs-search.js"></script>
+        <script>
+            for (var x of document.getElementsByClassName("nav-item")) {
+                for (var y of x.getElementsByTagName("a")) {
+                    if (window.location.href.replace("/index.html", "").startsWith(y.attributes.getNamedItem("href").value.replace("/index.html", ""))) {
+                        x.classList.toggle("active")
+                    }
+
+                }
+            }
+        </script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>

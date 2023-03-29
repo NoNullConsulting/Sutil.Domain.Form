@@ -1,5 +1,67 @@
-
 /*--------------------------------------------------------------------------
   Customize your CSS here
 /*--------------------------------------------------------------------------*/
+:root {
+  --main-cta: linear-gradient(133deg, #cf0078 0%, #00d4ff 100%);
+}
 
+
+
+#search-by {
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  position: relative;
+}
+
+#search-by:focus-visible {
+  outline: none;
+}
+
+#fsdocs-searchbox {
+  padding: 1px;
+  border-radius: 5px;
+}
+
+#fsdocs-searchbox:has(#search-by:focus-visible) {
+  background: var(--main-cta);
+}
+
+.nav-item {
+  display: block;
+  color: #4e4e4e;
+  padding: 5px 5px 5px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-item a {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-item:before {
+  content: ' ';
+
+  width: 0px;
+  height: 3px;
+
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+
+  background: var(--main-cta);
+  transition: 0.3s ease;
+}
+
+.nav-item.active:before,
+.nav-item:hover:before {
+  width: 45px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0px 10px;
+}

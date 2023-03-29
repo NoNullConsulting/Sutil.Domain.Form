@@ -1,6 +1,6 @@
 (**
 ---
-category: Documentation
+category: Example
 categoryindex: 0
 index: 1
 ---
@@ -16,6 +16,7 @@ Create simple (and stupid) `Email` validation
 #r "nuget: Sutil"
 (** *)
 
+(*** Sutil.REPL index.fs *)
 open Sutil.Domain.Form
 
 module Email =
@@ -35,3 +36,4 @@ let emailField =  // FormElement<Email>
         .setPlaceholder( "Email" )
         .withParser( Email.create )
         .render()
+(** *)
