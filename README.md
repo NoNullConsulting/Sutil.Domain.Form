@@ -6,12 +6,14 @@ It is likely that you have never heard of or used Sutil before, so I would like 
 
 Instead of familiarity or popularity, I choose a frontend framework based on criteria.
 My list of criteria was as follows: 
+
 * __Robust__: Elm is know for being robust. This is done with a pure functional language, strong types, and a robust predictable pattern.
 * __Reactive__: SolidJS and Svelte is examples of frameworks that embrace observables to making dom manipulation much more efficient, robust and predictable, that virtual doms and other method i have seen.
 * __Html is returned by function__: ReactJS, SolidJS and Elm all shares that you can use normal syntax to generate Html. No need for a new template language with "__different__" syntax and possibilities.
 * __Backend integration__: The ability to share functions and types between the client and server, such as Blazor, full-stack JS frameworks, makes the development process more enjoyable.
 
 From these criteria, I found that Sutil to be the optimal solution. Is it perfect? Nope, and here is some of the drawbacks: 
+
 * __Maturity__: The framework just finished the beta state. The community is relative small and there is no big company invested in it.
 * __Ecosystem__: It is based on Fable, but most other tools build in Fable is targeted another framework (React based). It does not have the nice package manager from Elm and so on. 
 * __Observable Syntax__ : Svelte made the observable syntax close to invisible, this is not the case in Sutil. Sutil is closer to RXJS.
@@ -20,6 +22,6 @@ From these criteria, I found that Sutil to be the optimal solution. Is it perfec
 
 ## Getting started
 In the future...
-```
-dotnet add package Sutil.Domain.Form
+```shell
+$ dotnet add package Sutil.Domain.Form
 ```

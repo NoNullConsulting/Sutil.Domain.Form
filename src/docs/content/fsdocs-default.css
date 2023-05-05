@@ -12,6 +12,19 @@
     --cta-context: linear-gradient(133deg, #cf0078 0%, #00d4ff 100%);
 }
 
+
+:root.light {
+    --primary-context: #fbfbfb;
+    --primary-context--light: #fff;
+    --primary-context--strong: #eaeaea;
+    --primary-context-contrast: #161616;
+    --primary-context-contrast--light: #101010;
+    --primary-context-contrast--strong: #050505;
+    --primary-context-link: orange;
+
+    --cta-context: linear-gradient(133deg, #cf0078 0%, #00d4ff 100%);
+}
+
 /*--------------------------------------------------------------------------
   Formatting for page & standard document content
 /*--------------------------------------------------------------------------*/
@@ -39,7 +52,6 @@ body {
     gap: 30px;
     padding: 15px 30px;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .logo {
@@ -99,14 +111,14 @@ nav a:hover {
 
 pre {
     position: relative;
-    padding: 30px 15px 15px 30px;
+    padding: 40px 15px 15px 30px;
 }
 
 pre::before {
     position: absolute;
     width: 35px;
     top: 10px;
-    right: 15px;
+    left: 15px;
 
     content: " ";
     background-image: url(/img/window-buttons.png);
@@ -446,16 +458,11 @@ screen and (min-resolution: 120dpi) and (max-width: 767.9px) {
     font-weight: 600;
 }
 
-#fsdocs-content table.pre {
-    background-color: #fff7ed;
-}
-
 #fsdocs-content table.pre pre {
     padding: 0px;
     margin: 0px;
     border-radius: 0px;
     width: 100%;
-    background-color: #fff7ed;
     color: #837b79;
 }
 
@@ -731,4 +738,11 @@ div.fsdocs-tip code {
 
 #header {
     width: 100%;
+}
+
+
+#fsdocs-content code[lang="shell"] {
+    padding: 40px 10px 20px 10px;
+    display: block;
+    color: var(--primary-context-contrast);
 }

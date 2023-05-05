@@ -16,6 +16,9 @@ module ProjectSources =
 
 let watchDocs _ =
 
+
+    Shell.cp (Path.combine root "README.md") (Path.combine root "src/docs/index.md")
+
     Shell.Exec(
         "dotnet",
         $"fsdocs watch --input src/docs --clean --parameters root http://localhost:8000 --properties Configuration=Release --port 8000",
